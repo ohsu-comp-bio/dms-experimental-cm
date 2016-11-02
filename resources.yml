@@ -1,0 +1,16 @@
+# Create DMS service instances and disks
+- name: launch a compute instances
+  hosts: localhost
+  gather_facts: false # don't gather facts on local host
+  tasks:
+  - name: create mongo instances 
+    with_items: [dms-mongo-1]
+    os_server:
+       state: present
+       # set OpenStack auth environment variables using RC file: 
+       # http://docs.openstack.org/cli-reference/common/cli-set-environment-variables-using-openstack-rc.html
+       name: "{{ item }}"
+       image: "Ubuntu 14.04"     # choose an image that has python installed
+       key_name: "{{ os_key }}"
+       flavor: acc.half
+       network: "{{ os_network }}"

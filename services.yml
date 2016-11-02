@@ -1,0 +1,7 @@
+# https://github.com/UnderGreen/ansible-role-mongodb
+- name: MongoDB server
+  hosts: dms-mongo-1 
+  remote_user: ubuntu
+  become: true
+  roles:
+  - mongodb
