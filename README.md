@@ -1,2 +1,2 @@
 # dms-experimental-cm
-ansible configuration for GDC API based DMS
+Ansible configuration for [CCC DMS](https://github.com/ohsu-computational-biology/CCC_DMS).
